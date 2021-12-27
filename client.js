@@ -11,7 +11,7 @@ connection.onopen = () => {
   // After 10 seconds close web socket connection.
   introduceStop = setTimeout(function () {
     console.log(
-      `${new Date().toLocaleTimeString()}: Client closing WebSocket connection`
+      `${new Date().toLocaleTimeString()} Client closing WebSocket connection`
     );
     connection.close();
   }, 10000);
@@ -31,5 +31,5 @@ connection.onmessage = (event) => {
 // Clear things once web socket connection is closed.
 connection.onclose = () => {
   clearTimeout(introduceStop);
-  console.log("Web Socket connection properly closed.");
+  console.log(`${new Date().toLocaleTimeString()} WebSocket connection closed.`);
 };

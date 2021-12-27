@@ -16,12 +16,12 @@ wss.on("connection", (ws) => {
 
   // Listen to the message coming from client.
   ws.on("message", (message) => {
-    console.log(`${new Date().toLocaleTimeString()}: ${message}`);
+    console.log(`${new Date().toLocaleTimeString()} ${message}`);
   });
 
   // Clearing up when client closes web socket connection
   ws.on("close", () => {
     clearInterval(ping);
-    console.log("Connection closed.");
+    console.log(`${new Date().toLocaleTimeString()} Connection closed.`);
   });
 });
